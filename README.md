@@ -6,7 +6,7 @@ Public Domain Name: rawlingsaltschool.mooo.com
 
 #How to Host an HTML Webpage On an AWS EC2 Server
 
-Step 1: Setup EC2 Instance on AWS
+Step 1: Setup EC2 Instance on AWS and Launch it
 Amazon Web Services (AWS) Elastic Compute Cloud (EC2) allows users to create virtual servers, called instances, to run applications on the cloud. Setting up an EC2 instance might seem daunting initially, but this guide will walk you through the process step-by-step. To set up an EC2 instanc. Set-up an EC2 instance with the following steps.
 1. Go to the AWS Management Console.
 2. Sign in with your AWS credentials. If you don’t have an account, create one by clicking Create a Free Account.
@@ -31,4 +31,25 @@ Amazon Web Services (AWS) Elastic Compute Cloud (EC2) allows users to create vir
     Download Key Pair: Save the .pem file securely; you’ll need it to connect to your instance.
 14. Click Launch Instances.
 
-Step 2: Launch an EC2 Instance
+Step 2: Connect to the Instance
+You can connect to the instance using the AWS CLI or using SSH. SSH into the EC2 instance using your key pair:
+ssh -i your-key.pem ec2-user@your-ec2-public-ip
+
+Step 3: Install a Web Server
+Install Apache or Nginx:
+   For Apache:
+      sudo yum install httpd -y   # For Amazon Linux
+      sudo service httpd start
+   For Nginx:
+      sudo apt update
+      sudo apt install nginx -y
+      sudo service nginx start
+
+Step 4: Place your HTML files in the server's document root:
+For Apache:
+   sudo mv your-file.html /var/www/html/index.html
+For Nginx:
+   sudo mv your-file.html /usr/share/nginx/html/index.html
+
+Step 5: Access your website
+Copy the public IP address of your Instance, pase it on your browser and access your webpage.
