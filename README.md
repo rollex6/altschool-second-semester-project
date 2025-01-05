@@ -1,7 +1,7 @@
 # altschool-second-semester-project
 I provisioned a server and set up a simple landing page to demonstrate my team’s capabilities to potential investors.
 
-Public IP Address: 3.84.250.118
+Public IP Address: 44.202.237.113
 Public Domain Name: rawlingsaltschool.mooo.com
 
 #How to Host an HTML Webpage On an AWS EC2 Server
